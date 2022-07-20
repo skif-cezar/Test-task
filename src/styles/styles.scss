@@ -1,8 +1,11 @@
+@import "abstracts/variables";
+
 @import 'base/reset';
 @import 'base/typography';
 
 @import 'components/buttons';
 
+@import 'layot/container';
 @import 'layot/footer';
 @import 'layot/forms';
 @import 'layot/header';

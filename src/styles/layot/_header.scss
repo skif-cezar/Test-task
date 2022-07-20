@@ -1,0 +1,22 @@
+.header {
+	position     : relative;
+	top          : 40px;
+	border-radius: 0px;
+}
+
+.header-container {
+	height          : 100px;
+	background-color: $white;
+
+	&__logo {
+		position      : absolute;
+		left          : 16px;
+		top           : 39px;
+		font-size     : 1.125rem;
+		font-weight   : 700;
+		line-height   : 1.3125;
+		letter-spacing: 0em;
+		text-align    : left;
+
+	}
+}
