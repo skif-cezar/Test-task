@@ -2,13 +2,16 @@
 	position     : relative;
 	top          : 40px;
 	border-radius: 0px;
+	min-height: 210px;
 
 	&__link {
+		display      : flex;
 		position     : absolute;
-		top          : 183px;
+		top          : 170px;
 		height       : 40px;
 		width        : 1140px;
 		border-radius: 0px;
+		text-align   : center;
 	}
 }
 
@@ -54,6 +57,7 @@
 		color      : $link-color;
 		cursor     : pointer;
 	}
+
 	&_active {
 		color: $text-color;
 	}

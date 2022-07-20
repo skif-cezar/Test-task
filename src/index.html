@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML5. Базовый шаблон для любого проекта</title>
-    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="description" content="Шаблон HTML5 для любого проекта" />
   </head>
   <body>
@@ -43,8 +43,59 @@
           </ul>
         </nav>
       </header>
-      <main>Content
-        <aside></aside>
+      <main class="main">
+        <aside class="main__form">
+          <h2 class="main__form-name">26 Results Found</h2>
+          <form class="filter-form">
+            <i class="filter-form__arrow"></i>
+            <fieldset class="filter-form__container">
+              <legend class="filter-form__name">Param 1</legend>
+              <input type="checkbox" id="val1" name="value 1" />
+              <label for="val1">value 1</label><br />
+              <input type="checkbox" id="val2" name="value 2" />
+              <label for="val2">value 2</label><br />
+              <input type="checkbox" id="val3" name="value 3" />
+              <label for="val3">value 3</label><br />
+              <input type="checkbox" id="val4" name="value 4" />
+              <label for="val4">value 4</label><br />
+              <input type="checkbox" id="val5" name="value 5" />
+              <label for="val5">value 5</label><br />
+            </fieldset>
+          </form>
+          <form class="filter-form form-radio">
+            <i class="filter-form__arrow"></i>
+            <fieldset class="filter-form__container">
+              <legend class="filter-form__name">Param 2</legend>
+              <input type="radio" id="val2_1" name="param2" />
+              <label for="val2_1">value 2_1</label><br />
+              <input type="radio" id="val2_2" name="param2" />
+              <label for="val2_2">value 2_2</label><br />
+              <input type="radio" id="val2_3" name="param2" />
+              <label for="val2_3">value 2_3</label><br />
+            </fieldset>
+          </form>
+          <form class="filter-form">
+            <i class="filter-form__arrow"></i>
+            <fieldset class="filter-form__container form-range">
+              <legend class="filter-form__name">Param 3</legend>
+              <input type="number" name="min" placeholder="min" />
+              <input
+                class="form-range__max"
+                type="number"
+                name="max"
+                placeholder="max"
+              />
+            </fieldset>
+          </form>
+          <form class="filter-form form-keywords">
+            <i class="filter-form__arrow"></i>
+            <fieldset class="filter-form__container">
+              <legend class="filter-form__name">Param 4</legend>
+              <input type="text" name="keyword" placeholder="Keyword" />
+            </fieldset>
+          </form>
+          <button class="form-search-btn btn">Search</button>
+        </aside>
         <article>
           <section></section>
         </article>
