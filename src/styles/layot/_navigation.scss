@@ -1,0 +1,39 @@
+.header__menu {
+	position        : absolute;
+	top             : 120px;
+	background-color: $white;
+	height          : 50px;
+	width           : 1140px;
+	border-radius   : 0px;
+}
+
+.menu {
+	display        : flex;
+	justify-content: flex-start;
+	align-items    : center;
+	padding        : 0px 0px 0px 16px;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		padding: 0px 32px 0px 0px;
+	}
+
+	&__link {
+		height        : 50px;
+		padding-top   : 15px;
+		display       : block;
+		text-transform: uppercase;
+		font-size     : 1rem;
+		line-height   : 1.17;
+		color         : $menu-link-color;
+		cursor        : pointer;
+		transition    : color 0.2s linear;
+	}
+
+	&__link:hover {
+		color: $link-hover-color;
+	}
+}
