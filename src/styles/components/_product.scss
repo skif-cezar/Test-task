@@ -1,0 +1,14 @@
+.products {
+	&__item {
+		max-width       : 100%;
+		max-height      : 200px;
+		background-color: $white;
+	}
+
+	&__img {
+		border: none;
+		max-width       : 224px;
+		max-height      : 168px;
+		background-color: $img-bg-color;
+	}
+}

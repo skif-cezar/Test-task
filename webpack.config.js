@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -42,6 +43,11 @@ module.exports = {
 		hot: isDev
 	},
 	plugins: [
+		new CopyPlugin({
+			patterns: [
+			  { from: "assets/img", to: "assets/img" },
+			],
+		 }),
 		new HTMLWebpackPlugin({
 			title: dataset["page_meta"]["title"],
 			'meta': {
@@ -85,9 +91,18 @@ module.exports = {
 				loader: 'json-loader'
 			},
 			{
-				test: /\.(png|jpg|svg|gif)$/,
-				use: ['file-loader']
-			},
+				test: /\.(gif|png|jpe?g|svg)$/i,
+				use: [
+				  'file-loader',
+				  {
+					 loader: 'image-webpack-loader',
+					 options: {
+						bypassOnDebug: true, 
+						disable: true, 
+					 },
+				  },
+				],
+			 },
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
 				use: ['file-loader']
