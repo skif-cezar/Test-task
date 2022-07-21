@@ -45,9 +45,9 @@ module.exports = {
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-			  { from: "assets/img", to: "assets/img" },
+				{ from: "assets/img", to: "assets/img" },
 			],
-		 }),
+		}),
 		new HTMLWebpackPlugin({
 			title: dataset["page_meta"]["title"],
 			'meta': {
@@ -64,6 +64,45 @@ module.exports = {
 			linkBreadcrumbs1: dataset["breadcrumbs"][0]["text"],
 			linkBreadcrumbs2: dataset["breadcrumbs"][1]["text"],
 			linkBreadcrumbs3: dataset["breadcrumbs"][2]["text"],
+
+			productTitle1: dataset["stock"][0]["title"],
+			priceCurrency: dataset["stock"][0]["price_currency"],
+			productPrice1: dataset["stock"][0]["price"],
+			year1: dataset["stock"][0]["year"],
+			mileage1: dataset["stock"][0]["mileage"],
+			mileageMeasure: dataset["stock"][0]["mileage_measure"],
+			axleConfiguration1: dataset["stock"][0]["axle_configuration"],
+
+			productTitle2: dataset["stock"][1]["title"],
+			productPrice2: dataset["stock"][1]["price"],
+			year2: dataset["stock"][1]["year"],
+			mileage2: dataset["stock"][1]["mileage"],
+			axleConfiguration2: dataset["stock"][1]["axle_configuration"],
+
+			productTitle3: dataset["stock"][2]["title"],
+			productPrice3: dataset["stock"][2]["price"],
+			year3: dataset["stock"][2]["year"],
+			mileage3: dataset["stock"][2]["mileage"],
+			axleConfiguration3: dataset["stock"][2]["axle_configuration"],
+
+			productTitle4: dataset["stock"][3]["title"],
+			productPrice4: dataset["stock"][3]["price"],
+			year4: dataset["stock"][3]["year"],
+			mileage4: dataset["stock"][3]["mileage"],
+			axleConfiguration4: dataset["stock"][3]["axle_configuration"],
+
+			productTitle5: dataset["stock"][4]["title"],
+			productPrice5: dataset["stock"][4]["price"],
+			year5: dataset["stock"][4]["year"],
+			mileage5: dataset["stock"][4]["mileage"],
+			axleConfiguration5: dataset["stock"][4]["axle_configuration"],
+
+			productTitle6: dataset["stock"][5]["title"],
+			productPrice6: dataset["stock"][5]["price"],
+			year6: dataset["stock"][5]["year"],
+			mileage6: dataset["stock"][5]["mileage"],
+			axleConfiguration6: dataset["stock"][5]["axle_configuration"],
+
 			template: './index.html',
 			minify: {
 				collapseWhitespace: isProd
@@ -93,16 +132,16 @@ module.exports = {
 			{
 				test: /\.(gif|png|jpe?g|svg)$/i,
 				use: [
-				  'file-loader',
-				  {
-					 loader: 'image-webpack-loader',
-					 options: {
-						bypassOnDebug: true, 
-						disable: true, 
-					 },
-				  },
+					'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							bypassOnDebug: true,
+							disable: true,
+						},
+					},
 				],
-			 },
+			},
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,
 				use: ['file-loader']
