@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HTML5. Базовый шаблон для любого проекта</title>
-    <meta name="keywords" content="HTML, CSS, JavaScript" />
-    <meta name="description" content="Шаблон HTML5 для любого проекта" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
     <div class="wrapper">
@@ -16,29 +14,49 @@
         <nav class="header__menu menu">
           <ul class="menu__list">
             <li class="menu__item">
-              <a class="menu__link">Navlink1</a>
+              <a class="menu__link" href="<%= htmlWebpackPlugin.options.href %>"
+                ><%= htmlWebpackPlugin.options.linkMenu1 %></a
+              >
             </li>
             <li class="menu__item">
-              <a class="menu__link">Navlink2</a>
+              <a class="menu__link" href="<%= htmlWebpackPlugin.options.href %>"
+                ><%= htmlWebpackPlugin.options.linkMenu2 %></a
+              >
             </li>
             <li class="menu__item">
-              <a class="menu__link">Navlink3</a>
+              <a class="menu__link" href="<%= htmlWebpackPlugin.options.href %>"
+                ><%= htmlWebpackPlugin.options.linkMenu3 %></a
+              >
             </li>
             <li class="menu__item">
-              <a class="menu__link">Navlink4</a>
+              <a class="menu__link" href="<%= htmlWebpackPlugin.options.href %>"
+                ><%= htmlWebpackPlugin.options.linkMenu4 %></a
+              >
             </li>
           </ul>
         </nav>
         <nav class="header__link links">
           <ul class="links__list">
             <li class="links__item">
-              <a class="links__link">Breadcrumb 1</a>
+              <a
+                class="links__link"
+                href="<%= htmlWebpackPlugin.options.hrefBreadcrumbs %>"
+                ><%= htmlWebpackPlugin.options.linkBreadcrumbs1 %></a
+              >
             </li>
             <li class="links__item">
-              <a class="links__link">Breadcrumb 2</a>
+              <a
+                class="links__link"
+                href="<%= htmlWebpackPlugin.options.hrefBreadcrumbs %>"
+                ><%= htmlWebpackPlugin.options.linkBreadcrumbs2 %></a
+              >
             </li>
             <li class="links__item">
-              <a class="links__link links_active">Breadcrumb 3</a>
+              <a
+                class="links__link links_active"
+                href="<%= htmlWebpackPlugin.options.hrefBreadcrumbs %>"
+                ><%= htmlWebpackPlugin.options.linkBreadcrumbs3 %></a
+              >
             </li>
           </ul>
         </nav>
@@ -97,7 +115,7 @@
           <button class="form-search-btn btn">Search</button>
         </aside>
         <article class="main__content">
-          <h1 class="main__heading">Heading Level 1</h1>
+          <h1 class="main__heading"><%= htmlWebpackPlugin.options.h1 %></h1>
           <section class="main__section-header section-header">
             <section class="section-header__pagination">
               <button class="section-header__button btn">&lt;</button>

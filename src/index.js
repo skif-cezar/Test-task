@@ -1,5 +1,5 @@
 import './styles/styles.scss';
 
-import json from './assets/data/dataset';
+/*import json from './assets/data/dataset';
 
-console.log('JSON', json);
+console.log('JSON', json);*/

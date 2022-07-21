@@ -1,3 +1,4 @@
+const dataset = require('./src/assets/data/dataset.json');
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -42,10 +43,27 @@ module.exports = {
 	},
 	plugins: [
 		new HTMLWebpackPlugin({
+			title: dataset["page_meta"]["title"],
+			'meta': {
+				'keywords': dataset["page_meta"]["meta_keywords"],
+				'description': dataset["page_meta"]["meta_description"]
+			},
+			h1: dataset["page_meta"]["h1"],
+			href: dataset["nav"][0]["href"],
+			linkMenu1: dataset["nav"][0]["text"],
+			linkMenu2: dataset["nav"][1]["text"],
+			linkMenu3: dataset["nav"][2]["text"],
+			linkMenu4: dataset["nav"][3]["text"],
+			hrefBreadcrumbs: dataset["breadcrumbs"][0]["href"],
+			linkBreadcrumbs1: dataset["breadcrumbs"][0]["text"],
+			linkBreadcrumbs2: dataset["breadcrumbs"][1]["text"],
+			linkBreadcrumbs3: dataset["breadcrumbs"][2]["text"],
 			template: './index.html',
 			minify: {
 				collapseWhitespace: isProd
-			}
+			},
+			scriptLoading: 'defer',
+			inject: 'body'
 		}),
 		new CleanWebpackPlugin(),
 		new MiniCssExtractPlugin({
@@ -61,6 +79,10 @@ module.exports = {
 					"css-loader",
 					"sass-loader"
 				]
+			},
+			{
+				test: /.json$/,
+				loader: 'json-loader'
 			},
 			{
 				test: /\.(png|jpg|svg|gif)$/,
